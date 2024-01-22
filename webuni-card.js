@@ -18,57 +18,42 @@ export class WebuniCard extends LitElement {
     return css`
       :host {
         display: block;
-        border: solid 1px gray;
-        padding: 16px;
-        max-width: 800px;
+        padding: 32px;
+        /*jobb mint a sima fekete color: #424242;*/
+        color: #424242;
+        font-family: 'Roboto', sans-serif;
+        box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+        /* box-shadow: 0 3px 15px rgba(0,0,0,0.2); kellemes shadow ad vissza*/
+        border-radius: 10px;
       }
+      
     `;
   }
 
   static get properties() {
     return {
       /**
-       * The name to say "Hello" to.
-       * @type {string}
+       * The new property is titel to add Heading injection.
+       * @title {string}
        */
-      name: {type: String},
+      title: {type: String},
 
-      /**
-       * The number of times the button has been clicked.
-       * @type {number}
-       */
-      count: {type: Number},
     };
   }
 
   constructor() {
     super();
-    this.name = 'World';
-    this.count = 0;
+
   }
 
   render() {
     return html`
-      <h1>${this.sayHello(this.name)}!</h1>
-      <button @click=${this._onClick} part="button">
-        Click Count: ${this.count}
-      </button>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+      <h1>${this.title} </h1>
       <slot></slot>
     `;
-  }
-
-  _onClick() {
-    this.count++;
-    this.dispatchEvent(new CustomEvent('count-changed'));
-  }
-
-  /**
-   * Formats a greeting
-   * @param name {string} The name to say "Hello" to
-   * @returns {string} A greeting directed at `name`
-   */
-  sayHello(name) {
-    return `Hello, ${name}`;
   }
 }
 

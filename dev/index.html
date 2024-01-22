@@ -8,16 +8,41 @@
     <script src="../node_modules/lit/polyfill-support.js"></script>
     <script type="module" src="../webuni-card.js"></script>
     <style>
-      p {
-        border: solid 1px blue;
-        padding: 8px;
+      h1 {
+        text-decoration: underline;
       }
+      webuni-card{
+          margin: 10px;
+          max-width: 400px;
+      }
+      .container{
+        display:flex;
+        
+      }
+
     </style>
   </head>
   <body>
-    <webuni-card name="Webuni">
-      <p>This is child content</p>
-      <h1>HEllo</h1>
+    <h1>My learning Component</h1>
+  <div class="container">
+
+    <webuni-card title="Egységbezárás">
+     <p> a web componensek csak is kizárólag a saját DOM fájuk felépítésért és stílusozásért felelnek Ezek viszont kivülről nem módosíthatók</p>
+     <button> Kattints, ha teszik</button>
     </webuni-card>
+    <webuni-card title="Újrafelhasználhatóság">
+      <p> Az újra felhasználhatóság abban merül ki, hogy a kész komponest bámilyen más web alkalmazásban felhasználhatjuk, könyvtártól és keretrendszertől függetlenül</p><br>
+      példa milyen alkalmazásokban alkalmazhatjuk
+      <ul>
+        <li>React</li>
+        <li>ANgular</li>
+        <li>Vue</li>
+      </ul>
+     </webuni-card>
+    <webuni-card title="Rugalmasság">
+      <p>A web komponensek tartalma propertiken és slotokn keresztül kivülről könnyedén testreszabadható</p>
+      <h1>Ez egy kivülről injektált tartalom</h1>
+    </webuni-card>
+  </div>
   </body>
 </html>
